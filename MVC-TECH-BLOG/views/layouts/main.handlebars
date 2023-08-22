@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Center the webpage title -->
+    <div class="title-container">
+        <h1>Tech Blog</h1>
+    </div>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            {{#unless loggedIn}}
+            <li><a href="/signup">Register</a></li>
+            <li><a href="/login">Log In</a></li>
+            {{/unless}}
+            {{#if loggedIn}}
+            <li><a href="/api/users/logout">Log Out</a></li>
+            {{/if}}
+        </ul>
+    </nav>
+    <!-- End of Navbar -->
+
+    {{{body}}}
+
+
+</body>
+</html>

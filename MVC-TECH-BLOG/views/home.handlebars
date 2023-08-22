@@ -1,0 +1,31 @@
+<div class="container">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <h1>Welcome to my blog</h1>
+  {{!-- <form class='add-recipe' method="post" action="/api/posts">
+
+
+    <input placeholder="title" name="title">
+    <textarea placeholder="content" rows=3 cols=15 name="content"></textarea>
+   
+
+
+    <button type="submit">add</button>
+
+
+
+</form> --}}
+<div id="post-container">
+    {{#if Posts.length}}
+        {{#each Posts}}
+        <div class="recipe-card">
+            <h3 class="recipe-name" data-id={{id}}>{{title}}</h3>
+            <p>{{content}}</p>
+            {{!-- step.details will show intructions --}} 
+            <button class="delete-recipe" data-id={{id}}>Delete Post</button>
+        </div>
+        {{/each}}
+    {{else}}
+        <p>No posts found.</p>
+    {{/if}}
+</div>
+</div>

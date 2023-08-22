@@ -1,0 +1,15 @@
+<div>
+    {{#if Posts.length}}
+        {{#each Posts}}
+        <div class="recipe-card">
+            <h3 class="recipe-name" data-id={{id}}>{{title}}</h3>
+            <p>{{content}}</p>
+            {{!-- step.details will show intructions --}} 
+            <button class="delete-recipe" data-id={{id}}>Delete Post</button>
+        </div>
+        {{/each}}
+    {{else}}
+        <p>No posts found.</p>
+    {{/if}}
+</div>
+<script src="/js/post.js"></script>
